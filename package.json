@@ -1,0 +1,19 @@
+{
+  "name": "request-no-hosts",
+  "version": "1.0.0",
+  "description": "Request a static file's content bypassing localhost ip mapping.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "request",
+    "dns",
+    "hosts"
+  ],
+  "author": "wyvernnot",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  }
+}
