@@ -32,7 +32,7 @@ function request_without_hosts(url, callback) {
   }
 
   // DNS resolve request
-  require('dns').resolve4(parseResult.host, function (err, result) {
+  require('dns').resolve4(parseResult.hostname, function (err, result) {
     if (err) {
       return callback(err);
     }
@@ -45,6 +45,10 @@ function request_without_hosts(url, callback) {
         host: parseResult.host
       }
     };
+
+    if (parseResult.port) {
+      options.port = parseResult.port;
+    }
 
     if (parseResult.protocol === 'https:') {
       require('https').request(options, responseHandler).end();

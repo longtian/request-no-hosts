@@ -20,4 +20,13 @@ describe('request no hosts', function () {
       }
     });
   });
+
+  it('should work with http', function (done) {
+    require('../')('http://111.13.101.208:80/robots.txt', function (err, result) {
+      if (!err && result) {
+        done();
+      }
+    });
+  });
+
 });
