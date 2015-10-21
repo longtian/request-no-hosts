@@ -1,6 +1,6 @@
 {
   "name": "request-no-hosts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Request a static file's content bypassing localhost ip mapping.",
   "main": "index.js",
   "scripts": {
