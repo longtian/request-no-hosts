@@ -29,4 +29,12 @@ describe('request no hosts', function () {
     });
   });
 
+  it('error case', function (done) {
+    require('../')('http://127.0.0.1:65387', function (err, result) {
+      if(err){
+        done();
+      }
+    });
+  });
+
 });

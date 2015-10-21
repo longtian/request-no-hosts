@@ -51,10 +51,15 @@ function request_without_hosts(url, callback) {
     }
 
     if (parseResult.protocol === 'https:') {
-      require('https').request(options, responseHandler).end();
+      var req=require('https').request(options, responseHandler);
     } else {
-      require('http').request(options, responseHandler).end();
+      var req=require('http').request(options, responseHandler);
     }
+
+    req.on('error',function(error){
+      callback(error);
+    });
+    req.end();
 
   });
 }
